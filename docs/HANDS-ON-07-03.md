@@ -141,18 +141,6 @@ graph TB
 
 ---
 
-## ✅ Checkpoint
-
-Ao final deste vídeo você deve:
-
-- [ ] Entender os 5 níveis de maturidade
-- [ ] Ter feito autoavaliação da sua organização
-- [ ] Conhecer as 4 dimensões (Cultura, Processos, Ferramentas, Métricas)
-- [ ] Ter um plano de próximos passos
-- [ ] Conhecer ferramentas para evoluir
-
----
-
 ## 📖 Leitura Complementar
 
 - [OWASP SAMM](https://owaspsamm.org/) - Software Assurance Maturity Model

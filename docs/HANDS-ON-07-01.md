@@ -337,20 +337,6 @@ Se quiser adicionar painéis customizados:
 
 ---
 
-## ✅ Checkpoint
-
-Ao final deste vídeo você deve ter:
-
-- [ ] Grafana rodando localmente
-- [ ] DefectDojo conectado como datasource
-- [ ] Dashboard pré-configurado funcionando
-- [ ] Dados REAIS das vulnerabilidades (Horusec, Trivy, ZAP)
-- [ ] Entender a diferença entre DefectDojo e Grafana
-- [ ] Saber explorar a API do DefectDojo
-- [ ] Saber configurar alertas
-
----
-
 ## 🎯 Valor Agregado
 
 | Antes (só DefectDojo) | Depois (DefectDojo + Grafana) |

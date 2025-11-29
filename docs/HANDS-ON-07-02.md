@@ -247,7 +247,11 @@ aws cloudtrail lookup-events \
 ### Passo 11: O que é SLSA?
 
 **SLSA** = Supply-chain Levels for Software Artifacts  
-(Pronuncia-se "salsa" 🌶️)
+(Pronuncia-se "salsa")
+
+> 🎯 **O que é?** SLSA é um **framework de segurança** que define práticas para proteger sua cadeia de software contra adulterações. Não é uma ferramenta nem um relatório — é um conjunto de **níveis de maturidade** que garantem que o artefato final (container, binário) realmente veio do código-fonte que você escreveu.
+
+> 💡 **Por que importa?** Ataques como SolarWinds (2020) mostraram que hackers podem injetar código malicioso durante o build, sem tocar no repositório. SLSA protege exatamente esse ponto.
 
 **Objetivo**: Garantir integridade da cadeia de software
 
@@ -339,19 +343,6 @@ jobs:
 | CloudTrail vazio | Filtro muito restritivo | Ampliar time range |
 | `gh` não autenticado | Token expirado | `gh auth login` |
 | SLSA falha | Permissões faltando | Adicionar `id-token: write` |
-
----
-
-## ✅ Checkpoint
-
-Ao final deste vídeo você deve ter:
-
-- [ ] Saber rastrear autoria pelo Git
-- [ ] Consultar PRs e workflow runs
-- [ ] Usar CloudTrail para auditoria AWS
-- [ ] Entender o framework SLSA
-- [ ] Saber o que é Provenance
-- [ ] Responder a uma auditoria com evidências
 
 ---
 
