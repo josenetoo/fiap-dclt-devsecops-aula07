@@ -18,4 +18,4 @@ datasources:
     jsonData:
       httpHeaderName1: "Authorization"
     secureJsonData:
-      httpHeaderValue1: "Token fdc427d4c3880421d566bb79615600607e1fcd31"
+      httpHeaderValue1: "Token SEU_API_KEY_AQUI"
