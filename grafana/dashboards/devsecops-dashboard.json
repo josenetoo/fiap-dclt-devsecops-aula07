@@ -1,0 +1,566 @@
+{
+  "annotations": {
+    "list": []
+  },
+  "description": "Dashboard de segurança integrado com DefectDojo - FIAP DevSecOps",
+  "editable": true,
+  "fiscalYearStartMonth": 0,
+  "graphTooltip": 0,
+  "id": null,
+  "links": [],
+  "liveNow": false,
+  "panels": [
+    {
+      "datasource": {
+        "type": "yesoreyeram-infinity-datasource",
+        "uid": "defectdojo"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "thresholds"
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              { "color": "green", "value": null },
+              { "color": "yellow", "value": 20 },
+              { "color": "red", "value": 50 }
+            ]
+          }
+        },
+        "overrides": []
+      },
+      "gridPos": { "h": 6, "w": 6, "x": 0, "y": 0 },
+      "id": 1,
+      "options": {
+        "colorMode": "value",
+        "graphMode": "area",
+        "justifyMode": "auto",
+        "orientation": "auto",
+        "reduceOptions": {
+          "calcs": ["lastNotNull"],
+          "fields": "",
+          "values": false
+        },
+        "textMode": "auto"
+      },
+      "pluginVersion": "10.0.0",
+      "title": "🔓 Total de Vulnerabilidades",
+      "type": "stat",
+      "targets": [
+        {
+          "columns": [],
+          "filters": [],
+          "format": "table",
+          "global_query_id": "",
+          "refId": "A",
+          "root_selector": "",
+          "source": "url",
+          "type": "json",
+          "url": "/findings/?active=true&limit=1",
+          "url_options": { "method": "GET" },
+          "parser": "backend",
+          "json_options": {
+            "root_is_not_array": true,
+            "columnar": false
+          },
+          "computed_columns": [],
+          "alias": "",
+          "data": "",
+          "jsonata": "count"
+        }
+      ]
+    },
+    {
+      "datasource": {
+        "type": "yesoreyeram-infinity-datasource",
+        "uid": "defectdojo"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "thresholds"
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              { "color": "green", "value": null },
+              { "color": "red", "value": 1 }
+            ]
+          }
+        },
+        "overrides": []
+      },
+      "gridPos": { "h": 6, "w": 6, "x": 6, "y": 0 },
+      "id": 2,
+      "options": {
+        "colorMode": "background",
+        "graphMode": "none",
+        "justifyMode": "auto",
+        "orientation": "auto",
+        "reduceOptions": {
+          "calcs": ["lastNotNull"],
+          "fields": "",
+          "values": false
+        },
+        "textMode": "auto"
+      },
+      "pluginVersion": "10.0.0",
+      "title": "🚨 Críticos Abertos",
+      "type": "stat",
+      "targets": [
+        {
+          "columns": [],
+          "filters": [],
+          "format": "table",
+          "global_query_id": "",
+          "refId": "A",
+          "root_selector": "",
+          "source": "url",
+          "type": "json",
+          "url": "/findings/?active=true&severity=Critical&limit=1",
+          "url_options": { "method": "GET" },
+          "parser": "backend",
+          "json_options": {
+            "root_is_not_array": true,
+            "columnar": false
+          },
+          "jsonata": "count"
+        }
+      ]
+    },
+    {
+      "datasource": {
+        "type": "yesoreyeram-infinity-datasource",
+        "uid": "defectdojo"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "thresholds"
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              { "color": "orange", "value": null }
+            ]
+          }
+        },
+        "overrides": []
+      },
+      "gridPos": { "h": 6, "w": 6, "x": 12, "y": 0 },
+      "id": 3,
+      "options": {
+        "colorMode": "background",
+        "graphMode": "none",
+        "justifyMode": "auto",
+        "orientation": "auto",
+        "reduceOptions": {
+          "calcs": ["lastNotNull"],
+          "fields": "",
+          "values": false
+        },
+        "textMode": "auto"
+      },
+      "pluginVersion": "10.0.0",
+      "title": "🟠 High",
+      "type": "stat",
+      "targets": [
+        {
+          "columns": [],
+          "filters": [],
+          "format": "table",
+          "global_query_id": "",
+          "refId": "A",
+          "root_selector": "",
+          "source": "url",
+          "type": "json",
+          "url": "/findings/?active=true&severity=High&limit=1",
+          "url_options": { "method": "GET" },
+          "parser": "backend",
+          "json_options": {
+            "root_is_not_array": true,
+            "columnar": false
+          },
+          "jsonata": "count"
+        }
+      ]
+    },
+    {
+      "datasource": {
+        "type": "yesoreyeram-infinity-datasource",
+        "uid": "defectdojo"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "thresholds"
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              { "color": "yellow", "value": null }
+            ]
+          }
+        },
+        "overrides": []
+      },
+      "gridPos": { "h": 6, "w": 6, "x": 18, "y": 0 },
+      "id": 4,
+      "options": {
+        "colorMode": "background",
+        "graphMode": "none",
+        "justifyMode": "auto",
+        "orientation": "auto",
+        "reduceOptions": {
+          "calcs": ["lastNotNull"],
+          "fields": "",
+          "values": false
+        },
+        "textMode": "auto"
+      },
+      "pluginVersion": "10.0.0",
+      "title": "🟡 Medium",
+      "type": "stat",
+      "targets": [
+        {
+          "columns": [],
+          "filters": [],
+          "format": "table",
+          "global_query_id": "",
+          "refId": "A",
+          "root_selector": "",
+          "source": "url",
+          "type": "json",
+          "url": "/findings/?active=true&severity=Medium&limit=1",
+          "url_options": { "method": "GET" },
+          "parser": "backend",
+          "json_options": {
+            "root_is_not_array": true,
+            "columnar": false
+          },
+          "jsonata": "count"
+        }
+      ]
+    },
+    {
+      "datasource": {
+        "type": "yesoreyeram-infinity-datasource",
+        "uid": "defectdojo"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "palette-classic"
+          },
+          "custom": {
+            "hideFrom": {
+              "legend": false,
+              "tooltip": false,
+              "viz": false
+            }
+          },
+          "mappings": []
+        },
+        "overrides": [
+          {
+            "matcher": { "id": "byName", "options": "Critical" },
+            "properties": [{ "id": "color", "value": { "fixedColor": "red", "mode": "fixed" } }]
+          },
+          {
+            "matcher": { "id": "byName", "options": "High" },
+            "properties": [{ "id": "color", "value": { "fixedColor": "orange", "mode": "fixed" } }]
+          },
+          {
+            "matcher": { "id": "byName", "options": "Medium" },
+            "properties": [{ "id": "color", "value": { "fixedColor": "yellow", "mode": "fixed" } }]
+          },
+          {
+            "matcher": { "id": "byName", "options": "Low" },
+            "properties": [{ "id": "color", "value": { "fixedColor": "green", "mode": "fixed" } }]
+          }
+        ]
+      },
+      "gridPos": { "h": 10, "w": 12, "x": 0, "y": 6 },
+      "id": 5,
+      "options": {
+        "displayLabels": ["name", "value"],
+        "legend": {
+          "displayMode": "list",
+          "placement": "right",
+          "showLegend": true
+        },
+        "pieType": "pie",
+        "reduceOptions": {
+          "calcs": ["lastNotNull"],
+          "fields": "",
+          "values": false
+        },
+        "tooltip": {
+          "mode": "single",
+          "sort": "none"
+        }
+      },
+      "pluginVersion": "10.0.0",
+      "title": "📊 Vulnerabilidades por Severidade",
+      "type": "piechart",
+      "targets": [
+        {
+          "columns": [],
+          "filters": [],
+          "format": "table",
+          "refId": "Critical",
+          "source": "url",
+          "type": "json",
+          "url": "/findings/?active=true&severity=Critical&limit=1",
+          "url_options": { "method": "GET" },
+          "parser": "backend",
+          "json_options": { "root_is_not_array": true },
+          "jsonata": "count",
+          "alias": "Critical"
+        },
+        {
+          "columns": [],
+          "filters": [],
+          "format": "table",
+          "refId": "High",
+          "source": "url",
+          "type": "json",
+          "url": "/findings/?active=true&severity=High&limit=1",
+          "url_options": { "method": "GET" },
+          "parser": "backend",
+          "json_options": { "root_is_not_array": true },
+          "jsonata": "count",
+          "alias": "High"
+        },
+        {
+          "columns": [],
+          "filters": [],
+          "format": "table",
+          "refId": "Medium",
+          "source": "url",
+          "type": "json",
+          "url": "/findings/?active=true&severity=Medium&limit=1",
+          "url_options": { "method": "GET" },
+          "parser": "backend",
+          "json_options": { "root_is_not_array": true },
+          "jsonata": "count",
+          "alias": "Medium"
+        },
+        {
+          "columns": [],
+          "filters": [],
+          "format": "table",
+          "refId": "Low",
+          "source": "url",
+          "type": "json",
+          "url": "/findings/?active=true&severity=Low&limit=1",
+          "url_options": { "method": "GET" },
+          "parser": "backend",
+          "json_options": { "root_is_not_array": true },
+          "jsonata": "count",
+          "alias": "Low"
+        }
+      ]
+    },
+    {
+      "datasource": {
+        "type": "yesoreyeram-infinity-datasource",
+        "uid": "defectdojo"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "palette-classic"
+          },
+          "custom": {
+            "axisCenteredZero": false,
+            "axisColorMode": "text",
+            "axisLabel": "",
+            "axisPlacement": "auto",
+            "fillOpacity": 80,
+            "gradientMode": "none",
+            "hideFrom": {
+              "legend": false,
+              "tooltip": false,
+              "viz": false
+            },
+            "lineWidth": 1,
+            "scaleDistribution": { "type": "linear" },
+            "thresholdsStyle": { "mode": "off" }
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [{ "color": "green", "value": null }]
+          }
+        },
+        "overrides": []
+      },
+      "gridPos": { "h": 10, "w": 12, "x": 12, "y": 6 },
+      "id": 6,
+      "options": {
+        "barRadius": 0,
+        "barWidth": 0.6,
+        "groupWidth": 0.7,
+        "legend": {
+          "calcs": [],
+          "displayMode": "list",
+          "placement": "bottom",
+          "showLegend": true
+        },
+        "orientation": "horizontal",
+        "showValue": "always",
+        "stacking": "none",
+        "tooltip": {
+          "mode": "single",
+          "sort": "none"
+        },
+        "xTickLabelRotation": 0,
+        "xTickLabelSpacing": 0
+      },
+      "pluginVersion": "10.0.0",
+      "title": "🛠️ Vulnerabilidades por Ferramenta",
+      "type": "barchart",
+      "targets": [
+        {
+          "columns": [],
+          "filters": [],
+          "format": "table",
+          "refId": "Horusec",
+          "source": "url",
+          "type": "json",
+          "url": "/findings/?active=true&found_by=2&limit=1",
+          "url_options": { "method": "GET" },
+          "parser": "backend",
+          "json_options": { "root_is_not_array": true },
+          "jsonata": "count",
+          "alias": "Horusec"
+        },
+        {
+          "columns": [],
+          "filters": [],
+          "format": "table",
+          "refId": "Trivy",
+          "source": "url",
+          "type": "json",
+          "url": "/findings/?active=true&found_by=3&limit=1",
+          "url_options": { "method": "GET" },
+          "parser": "backend",
+          "json_options": { "root_is_not_array": true },
+          "jsonata": "count",
+          "alias": "Trivy"
+        },
+        {
+          "columns": [],
+          "filters": [],
+          "format": "table",
+          "refId": "ZAP",
+          "source": "url",
+          "type": "json",
+          "url": "/findings/?active=true&found_by=4&limit=1",
+          "url_options": { "method": "GET" },
+          "parser": "backend",
+          "json_options": { "root_is_not_array": true },
+          "jsonata": "count",
+          "alias": "ZAP"
+        }
+      ]
+    },
+    {
+      "datasource": {
+        "type": "yesoreyeram-infinity-datasource",
+        "uid": "defectdojo"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "color": { "mode": "thresholds" },
+          "custom": {
+            "align": "auto",
+            "cellOptions": { "type": "auto" },
+            "inspect": false
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [{ "color": "green", "value": null }]
+          }
+        },
+        "overrides": [
+          {
+            "matcher": { "id": "byName", "options": "severity" },
+            "properties": [
+              { "id": "custom.width", "value": 100 },
+              {
+                "id": "mappings",
+                "value": [
+                  { "options": { "Critical": { "color": "red", "index": 0 } }, "type": "value" },
+                  { "options": { "High": { "color": "orange", "index": 1 } }, "type": "value" },
+                  { "options": { "Medium": { "color": "yellow", "index": 2 } }, "type": "value" },
+                  { "options": { "Low": { "color": "green", "index": 3 } }, "type": "value" }
+                ]
+              },
+              { "id": "custom.cellOptions", "value": { "type": "color-text" } }
+            ]
+          },
+          {
+            "matcher": { "id": "byName", "options": "title" },
+            "properties": [{ "id": "custom.width", "value": 400 }]
+          }
+        ]
+      },
+      "gridPos": { "h": 10, "w": 24, "x": 0, "y": 16 },
+      "id": 7,
+      "options": {
+        "cellHeight": "sm",
+        "footer": {
+          "countRows": false,
+          "fields": "",
+          "reducer": ["sum"],
+          "show": false
+        },
+        "showHeader": true,
+        "sortBy": [{ "desc": true, "displayName": "severity" }]
+      },
+      "pluginVersion": "10.0.0",
+      "title": "📋 Últimas Vulnerabilidades",
+      "type": "table",
+      "targets": [
+        {
+          "columns": [
+            { "selector": "title", "text": "Title", "type": "string" },
+            { "selector": "severity", "text": "Severity", "type": "string" },
+            { "selector": "component_name", "text": "Component", "type": "string" },
+            { "selector": "created", "text": "Created", "type": "timestamp" }
+          ],
+          "filters": [],
+          "format": "table",
+          "refId": "A",
+          "root_selector": "results",
+          "source": "url",
+          "type": "json",
+          "url": "/findings/?active=true&limit=20&o=-severity",
+          "url_options": { "method": "GET" },
+          "parser": "backend"
+        }
+      ]
+    }
+  ],
+  "refresh": "30s",
+  "schemaVersion": 38,
+  "style": "dark",
+  "tags": ["devsecops", "security", "defectdojo"],
+  "templating": { "list": [] },
+  "time": { "from": "now-7d", "to": "now" },
+  "timepicker": {},
+  "timezone": "",
+  "title": "DevSecOps Security Dashboard",
+  "uid": "devsecops-dashboard",
+  "version": 1,
+  "weekStart": ""
+}

@@ -1,0 +1,21 @@
+# Datasource provisioning para DefectDojo
+# Este arquivo configura automaticamente o datasource Infinity
+#
+# IMPORTANTE: Substitua SEU_API_KEY_AQUI pelo token do DefectDojo
+# Obtenha em: http://localhost:8080/api/key-v2
+#
+# Linux: altere host.docker.internal para 172.17.0.1
+
+apiVersion: 1
+
+datasources:
+  - name: DefectDojo
+    type: yesoreyeram-infinity-datasource
+    uid: defectdojo
+    access: proxy
+    isDefault: true
+    url: "http://host.docker.internal:8080/api/v2"
+    jsonData:
+      httpHeaderName1: "Authorization"
+    secureJsonData:
+      httpHeaderValue1: "Token fdc427d4c3880421d566bb79615600607e1fcd31"

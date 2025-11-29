@@ -1,0 +1,16 @@
+# Dashboard provisioning
+# Carrega dashboards automaticamente do diretório especificado
+
+apiVersion: 1
+
+providers:
+  - name: 'DevSecOps Dashboards'
+    orgId: 1
+    folder: ''
+    folderUid: ''
+    type: file
+    disableDeletion: false
+    updateIntervalSeconds: 30
+    allowUiUpdates: true
+    options:
+      path: /var/lib/grafana/dashboards

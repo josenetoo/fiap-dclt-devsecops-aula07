@@ -1,0 +1,33 @@
+# Grafana - Docker Compose
+# Execute: docker-compose up -d
+# Requer: DefectDojo rodando na porta 8080 (aula 06)
+#
+# IMPORTANTE: Antes de subir, edite o arquivo:
+#   provisioning/datasources/defectdojo.yml
+# E substitua SEU_API_KEY_AQUI pelo token do DefectDojo
+
+version: '3.8'
+
+services:
+  grafana:
+    image: grafana/grafana:latest
+    container_name: grafana
+    ports:
+      - "3000:3000"
+    environment:
+      GF_SECURITY_ADMIN_USER: admin
+      GF_SECURITY_ADMIN_PASSWORD: admin123
+      GF_USERS_ALLOW_SIGN_UP: "false"
+      # Instala o plugin Infinity para conectar APIs REST (DefectDojo)
+      GF_INSTALL_PLUGINS: "yesoreyeram-infinity-datasource"
+    volumes:
+      - grafana_data:/var/lib/grafana
+      # Provisioning automático de datasources e dashboards
+      - ./provisioning:/etc/grafana/provisioning
+      - ./dashboards:/var/lib/grafana/dashboards
+    extra_hosts:
+      # Permite acessar o DefectDojo rodando no host
+      - "host.docker.internal:host-gateway"
+
+volumes:
+  grafana_data:
